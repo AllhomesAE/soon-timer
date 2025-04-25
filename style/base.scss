@@ -1,0 +1,88 @@
+@use "sass:math";
+
+@function rem($screen) {
+    @return math.div(100vw, $screen) * 10;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica";
+}
+
+html,
+body {
+    font-size: 8px;
+    @media (min-width: 1200px) {
+        font-size: rem(1920);
+    }
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+a,
+span,
+img,
+button,
+li {
+    display: inline-block;
+}
+a {
+    text-decoration: none;
+    color: initial;
+}
+ul,
+ol {
+    list-style: none;
+}
+button,
+a {
+    outline: none;
+    border: none;
+}
+body {
+    // background: url("../img/bg.jpg");
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    width: 100vw;
+}
+.logo {
+    width: 18.2rem;
+    @media (max-width: 678px) {
+        width: 97px;
+    }
+    @media (min-width: 3600px) {
+        width: 259px;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+.phone {
+    font-size: 2.4rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    @media (max-width: 678px) {
+        font-size: 16px;
+        gap: 10px;
+    }
+    @media (min-width: 3600px) {
+        font-size: 32px;
+    }
+    img {
+        width: 2.5rem;
+        @media (max-width: 678px) {
+            display: inline-block;
+            width: 18px;
+        }
+    }
+    span {
+        color: rgba(255, 255, 255, 0.5);
+    }
+}
